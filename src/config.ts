@@ -17,17 +17,3 @@ export const THEME: 'auto' | 'light' | 'dark' = 'auto';
 // Starting art direction; long-press a screen's label (HOME / 01, FIELDNOTES) to switch.
 export const DEFAULT_DESIGN: 'studio' | 'fieldnotes' = 'studio';
 
-// Endpoints shown on the health screen. Replace with your own services.
-export const SERVICES: { name: string; url: string }[] = [
-  { name: 'Weather API', url: 'https://api.open-meteo.com/v1/forecast?latitude=41&longitude=29&current=temperature_2m' },
-  { name: 'Geo IP', url: 'https://get.geojs.io/v1/ip.json' },
-  { name: 'GitHub API', url: 'https://api.github.com' },
-  { name: 'Expo', url: 'https://expo.dev' },
-  { name: 'Internet', url: 'https://www.google.com/generate_204' },
-];
-
-// Health checks run this often, only while the health screen is showing.
-export const HEALTH_INTERVAL_MS = 60 * 1000;
-
-// Responses slower than this count as SLOW.
-export const SLOW_MS = 300;

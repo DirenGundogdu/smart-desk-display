@@ -1,16 +1,15 @@
 # Smart Desk Display
 
-A landscape "smart display" for an old Android phone that lives on a desk all day: a clock, the weather, a voice-driven to-do list, an API health board and a pomodoro timer. Built with Expo / React Native and tuned for a Redmi Note 8 (851×393 dp in landscape).
+A landscape "smart display" for an old Android phone that lives on a desk all day: a clock, the weather, a voice-driven to-do list and a pomodoro timer. Built with Expo / React Native and tuned for a Redmi Note 8 (851×393 dp in landscape).
 
 ## Screens
 
-Swipe left and right between four pages:
+Swipe left and right between three pages:
 
 | | |
 |---|---|
 | **Home** | Clock, current weather, next 24 hours, five-day forecast |
 | **To-do** | Multiple lists, add and edit by voice, swipe to delete or edit, drag to reorder |
-| **Health** | Pings your endpoints and shows OK / SLOW / DOWN with response times |
 | **Focus** | Pomodoro timer with adjustable lengths; the phone vibrates when a session ends |
 
 ## Two looks, day and night
@@ -27,7 +26,6 @@ The phone is meant to stay on, so the app tries to do as little as possible:
 - Location comes from an IP lookup once a day — no GPS.
 - Weather refreshes every 30 minutes and is cached, so it shows instantly on launch.
 - Only the visible page ticks every second; everything pauses when the app is in the background.
-- Health checks run only while the health page is on screen.
 
 ## Getting started
 
@@ -60,8 +58,6 @@ Everything lives in [`src/config.ts`](src/config.ts):
 | `THEME` | `'auto'`, `'light'` or `'dark'` |
 | `DEFAULT_DESIGN` | `'studio'` or `'fieldnotes'` on first launch |
 | `SHOW_SECONDS` | Second hand / per-second redraws on the clock |
-| `SERVICES` | Endpoints for the health page — replace the examples with your own |
-| `HEALTH_INTERVAL_MS`, `SLOW_MS` | Check frequency and the SLOW threshold |
 | `WEATHER_REFRESH_MS` | How often weather is fetched |
 
 Weather data is from [Open-Meteo](https://open-meteo.com) (no API key needed) and location from [GeoJS](https://www.geojs.io).
@@ -81,7 +77,6 @@ src/fieldnotes/         Fieldnotes screens and their palette
 src/components/         shared Studio pieces (colour panel, clock disc, text placement)
 src/weather/            Open-Meteo client, weather codes, icons
 src/todo/               lists, dictation, row component
-src/health/             endpoint checks
 src/pomodoro/           timer state
 plugins/                Expo config plugins
 ```
