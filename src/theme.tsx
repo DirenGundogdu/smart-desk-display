@@ -4,9 +4,9 @@ import { Inter_700Bold } from '@expo-google-fonts/inter/700Bold';
 import { Inter_800ExtraBold } from '@expo-google-fonts/inter/800ExtraBold';
 import { Inter_900Black } from '@expo-google-fonts/inter/900Black';
 import { createContext, ReactNode, useContext } from 'react';
-import { useWindowDimensions } from 'react-native';
+import { Platform, useWindowDimensions } from 'react-native';
 
-import { THEME } from './config';
+import { NOTCH_INSET_LEFT, THEME } from './config';
 import { useNow } from './hooks';
 import { useWeatherData } from './weather/WeatherContext';
 
@@ -147,5 +147,8 @@ export const useIsDayTheme = () => useContext(DayContext);
 export const DESIGN = { width: 851, height: 393, panel: 330 };
 export function useScale() {
   const { width, height } = useWindowDimensions();
-  return Math.min(width / DESIGN.width, height / DESIGN.height);
+  return Math.min((width - NOTCH_INSET) / DESIGN.width, height / DESIGN.height);
 }
+
+// Only the phone has the notch; the web preview uses the full width.
+export const NOTCH_INSET = Platform.OS === 'android' ? NOTCH_INSET_LEFT : 0;

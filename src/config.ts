@@ -17,3 +17,7 @@ export const THEME: 'auto' | 'light' | 'dark' = 'auto';
 // Starting art direction; long-press a screen's label (HOME / 01, FIELDNOTES) to switch.
 export const DEFAULT_DESIGN: 'studio' | 'fieldnotes' = 'studio';
 
+
+// Width (dp) of the camera notch on the left edge in landscape; MIUI paints it black.
+// 29 dp fits a Redmi Note 8 (80 px at 2.75x); set 0 on phones without a side cutout.
+export const NOTCH_INSET_LEFT = 29;

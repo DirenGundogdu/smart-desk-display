@@ -15,7 +15,7 @@ import { Page } from './src/pager/context';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PomodoroScreen } from './src/screens/PomodoroScreen';
 import { TodoScreen } from './src/screens/TodoScreen';
-import { FONTS, ThemeProvider } from './src/theme';
+import { FONTS, NOTCH_INSET, ThemeProvider } from './src/theme';
 import { WeatherProvider } from './src/weather/WeatherContext';
 
 // Each page in both art directions: [studio, fieldnotes].
@@ -53,5 +53,6 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#1B1D2D' },
+  // Keep content clear of the notch, which sits on the left in landscape.
+  root: { flex: 1, backgroundColor: '#000000', paddingLeft: NOTCH_INSET },
 });
