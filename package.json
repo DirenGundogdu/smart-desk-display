@@ -1,5 +1,5 @@
 {
-  "name": "panel",
+  "name": "smart-desk-display",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
