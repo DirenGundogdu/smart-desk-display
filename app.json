@@ -1,17 +1,19 @@
 {
   "expo": {
-    "name": "panel",
+    "name": "Panel",
     "slug": "panel",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#000000",
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.diren34.panel",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#000000",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +22,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3f8c06f3-4f00-4b28-9358-7473931d89c4"
+      }
+    },
+    "owner": "diren34",
+    "plugins": [
+      "expo-speech-recognition",
+      "expo-font",
+      "./plugins/withNoForceDark"
+    ]
   }
 }
